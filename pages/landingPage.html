@@ -100,21 +100,21 @@
 
         <div class="navigation__nav">
             <ul class="navigation__list">
-                <li class="navigation__item" onmouseenter="updateSublist('home')"><a href="#"
+                <li class="navigation__item" onmouseenter="updateSublist('home')" onclick="scrollToSection('home')"><a href="#home"
                         class="navigation__link">Home</a></li>
-                <li class="navigation__item" onmouseenter="updateSublist('about')"><a href="#"
+                <li class="navigation__item" onmouseenter="updateSublist('about')" onclick="scrollToSection('about')"><a href="#about"
                         class="navigation__link">About</a></li>
-                <li class="navigation__item" onmouseenter="updateSublist('campus')"><a href="#"
+                <li class="navigation__item" onmouseenter="updateSublist('campus')" onclick="scrollToSection('campus')"><a href="#campus"
                         class="navigation__link">Campus</a></li>
-                <li class="navigation__item" onmouseenter="updateSublist('family')"><a href="#"
+                <li class="navigation__item" onmouseenter="updateSublist('family')" onclick="scrollToSection('family')"><a href="#meet-iac"
                         class="navigation__link">Meet the Family</a></li>
-                <li class="navigation__item" onmouseenter="updateSublist('facilities')"><a href="#"
+                <li class="navigation__item" onmouseenter="updateSublist('facilities')" onclick="scrollToSection('facilities')"><a href="#facilities"
                         class="navigation__link">Facilities</a></li>
                 <li class="navigation__item" onmouseenter="updateSublist('organizations')"><a href="#"
                         class="navigation__link">Organizations</a></li>
-                <li class="navigation__item" onmouseenter="updateSublist('events')"><a href="#"
+                <li class="navigation__item" onmouseenter="updateSublist('events')" onclick="scrollToSection('events')"><a href="#events"
                         class="navigation__link">Events</a></li>
-                <li class="navigation__item" onmouseenter="updateSublist('others')"><a href="#"
+                <li class="navigation__item" onmouseenter="updateSublist('others')" onclick="scrollToSection('others')"><a href="#others"
                         class="navigation__link">Others</a></li>
             </ul>
 
@@ -195,7 +195,7 @@
     </div>
 
 
-    <header class="header">
+    <header class="header" id="home">
         <div class="top-heading">
             <img src="../img/iac-logo-blue.png" alt="iACADEMY Logo" class="top-heading__logo">
             <button class="btn-inquire">
@@ -260,7 +260,7 @@
 
         <!-- swithcing info slash for campus (sliding info) -->
 
-        <div class="campus">
+        <div class="campus" id="campus">
             <figure class="campus__text-area" id="campusTextArea">
                 <h2 class="heading-1 campus__heading mb-md" id="campusLocation">Campus</h2>
                 <div class="campus__paragraphs" id="campusParagraphs">
@@ -279,7 +279,7 @@
             </figure>
         </div>
 
-        <div class="meet-iac">
+        <div class="meet-iac" id="meet-iac">
             <h2 class="meet-iac__heading heading-1 heading-1--blue">Meet the family</h2>
             <div class="meet-iac__nav iac-nav" id="meetIacNav">
                 <!-- Dots -->
@@ -317,7 +317,7 @@
             </div>
         </div>
 
-        <div class="facilities">
+        <div class="facilities" id="facilities">
             <h2 class="heading-1 heading-1--blue mb-sm">Our Facilities</h2>
 
             <!-- Ground Floor is just a test -->
@@ -344,7 +344,7 @@
         </div>
 
 
-        <div class="events">
+        <div class="events" id="events">
             <!-- Copy best flex animation + half the background-->
             <h2 class="heading-1 heading-1--blue">
                 Events
@@ -453,7 +453,7 @@
             </div>
         </div>
 
-        <div class="checklist">
+        <div class="checklist" id="others">
             <h2 class="heading-1 heading-1--white checklist__heading">Checklist</h2>
             <div class="checklist-circle" id="checklistCircle" onclick="nextList(1)">
                 <div class="checklist-circle__item checklist-circle__item--1">

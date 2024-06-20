@@ -2,34 +2,30 @@
 // Object to store sublist items for each main navigation item
 const sublistContent = {
     home: [
-        { text: 'Sublist Home 1', link: '#' },
-        { text: 'Sublist Home 2', link: '#' },
-        { text: 'Sublist Home 3', link: '#' }
+        { text: 'Sublist Home 1', link: '#' }
     ],
     about: [
-        { text: 'Sublist About 1', link: '#' },
-        { text: 'Sublist About 2', link: '#' },
-        { text: 'Sublist About 3', link: '#' }
+        { text: 'Sublist About 1', link: '#' }
     ],
     campus: [
-        { text: 'MAKATI CAMPUS', link: '#' },
-        { text: 'CEBU CAMPUS', link: '#' }
+        { text: 'MAKATI CAMPUS', link: '#campus' },
+        { text: 'CEBU CAMPUS', link: '#campus' }
     ],
     family: [
-        { text: 'MANAGEMENT COMMITTEE', link: '#' },
-        { text: 'ACADEMIC HEADS', link: '#' },
-        { text: 'DEPARTMENTS', link: '#' }
+        { text: 'MANAGEMENT COMMITTEE', link: '#meet-iac' },
+        { text: 'ACADEMIC HEADS', link: '#meet-iac' },
+        { text: 'DEPARTMENTS', link: '#meet-iac' }
     ],
     facilities: [
-        { text: 'MEZZANINE', link: '#' },
-        { text: 'CAFETERIA', link: '#' },
-        { text: 'LIBRARY', link: '#' },
-        { text: 'SEWING ROOM', link: '#' },
-        { text: 'FASHION DESIGN ROOM', link: '#' },
-        { text: 'GREEN ROOM', link: '#' },
-        { text: 'SOUND ROOM', link: '#' },
-        { text: 'MULTIMEDIA ARTS LABORATORY', link: '#' },
-        { text: 'MORE', link: '#' },
+        { text: 'MEZZANINE', link: '#facilities' },
+        { text: 'CAFETERIA', link: '#facilities' },
+        { text: 'LIBRARY', link: '#facilities' },
+        { text: 'SEWING ROOM', link: '#facilities' },
+        { text: 'FASHION DESIGN ROOM', link: '#facilities' },
+        { text: 'GREEN ROOM', link: '#facilities' },
+        { text: 'SOUND ROOM', link: '#facilities' },
+        { text: 'MULTIMEDIA ARTS LABORATORY', link: '#facilities' },
+        { text: 'MORE', link: '#facilities' },
     ],
     organizations: [
         { text: 'Sublist Organizations 1', link: '#' },
@@ -37,19 +33,17 @@ const sublistContent = {
         { text: 'Sublist Organizations 3', link: '#' }
     ],
     events: [
-        { text: 'Student Orientation and Registration (SOAR)', link: '#' },
-        { text: 'iACADEMY Foundation Week', link: '#' },
-        { text: 'Therapets', link: '#' },
-        { text: 'PBL Expo', link: '#' },
-        { text: 'Battle League', link: '#' },
-        { text: 'Creative Camp', link: '#' },
-        { text: 'Recognition Day', link: '#' },
-        { text: 'MORE', link: '#' },
+        { text: 'Student Orientation and Registration (SOAR)', link: '#events' },
+        { text: 'iACADEMY Foundation Week', link: '#events' },
+        { text: 'Therapets', link: '#events' },
+        { text: 'PBL Expo', link: '#events' },
+        { text: 'Battle League', link: '#events' },
+        { text: 'Creative Camp', link: '#events' },
+        { text: 'Recognition Day', link: '#events' },
+        { text: 'MORE', link: '#events' },
     ],
     others: [
-        { text: 'Sublist Others 1', link: '#' },
-        { text: 'Sublist Others 2', link: '#' },
-        { text: 'Sublist Others 3', link: '#' }
+        { text: 'Sublist Others 1', link: '#others' }
     ]
 };
 
@@ -119,3 +113,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  }
+
+ 
