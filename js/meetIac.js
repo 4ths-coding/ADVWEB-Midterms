@@ -131,7 +131,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 function setFamGalleryActiveNav(activeNav) {
-    ;
+    iacGallery.classList.remove("active");
+
     meetIacNav.classList.remove("man-com");
     meetIacNav.classList.remove("aca-hea");
     meetIacNav.classList.remove("dep");
@@ -154,9 +155,35 @@ function setFamGalleryActiveNav(activeNav) {
         default:
             break;
     }
+
+    initializeFamily();
+
+}
+
+const instruction1 = document.getElementById("instruction1");
+const instruction2 = document.getElementById("instruction2");
+
+function arrangeGallery(event) {
+    const instruction1 = document.getElementById("instruction1");
+    const instruction2 = document.getElementById("instruction2");
+
+    iacGallery.classList.add("active");
+
+    if (instruction1) {
+        instruction1.classList.remove("used");
+    }
+
+    if (instruction2) {
+        instruction2.classList.remove("used");
+    }
+
+    event.target.classList.add("used");
 }
 
 const galleryManagementCommittee = `
+                <figure class="iac-gallery__instruction" onclick="arrangeGallery(event)" id="instruction1">
+                    Click me to view gallery!
+                </figure>
                 <figure class="iac-gallery__item iac-gallery__item--1">
                     <div class="iac-gallery__content iac-gallery__content--1">
                         <img src="../img/man-professional.png" alt="Member" class="iac-gallery__picture">
@@ -184,7 +211,7 @@ const galleryManagementCommittee = `
                         </figcaption>
                     </div>
                 </figure>
-                <figure class="iac-gallery__item iac-gallery__item--4">
+                <figure class="iac-gallery__item iac-gallery__item--4 mc">
                     <div class="iac-gallery__content iac-gallery__content--4">
                         <img src="../img/woman-professional.png" alt="Member" class="iac-gallery__picture">
                         <figcaption class="iac-gallery__caption">
@@ -202,7 +229,7 @@ const galleryManagementCommittee = `
                         </figcaption>
                     </div>
                 </figure>
-                <figure class="iac-gallery__item iac-gallery__item--6">
+                <figure class="iac-gallery__item iac-gallery__item--6 mc">
                     <div class="iac-gallery__content iac-gallery__content--6">
                         <img src="../img/woman-professional.png" alt="Member" class="iac-gallery__picture">
                         <figcaption class="iac-gallery__caption">
@@ -233,6 +260,9 @@ const galleryManagementCommittee = `
 
 
 const galleryAcademicHeads = `
+                <figure class="iac-gallery__instruction" onclick="arrangeGallery(event)" id="instruction2">
+                    Click me to view gallery!
+                </figure>
                 <figure class="iac-gallery__item iac-gallery__item--1 soda">
                     <div class="iac-gallery__content iac-gallery__content--1">
                         <img src="../img/man-professional.png" alt="Member" class="iac-gallery__picture">
@@ -1005,3 +1035,31 @@ function setDepartmentGallery(activeDepGallery) {
 }
 
 
+
+// Expected to return the contents of management committee or academic heads.
+// It depends on what nav is active.
+function getCurrentGalleryContents() {
+    return document.querySelectorAll(".iac-gallery__content");
+}
+
+function setContentEventListeners(contents) {
+    contents.forEach(content => {
+        content.addEventListener("click", () => handleMeetIacPersonPicClick(event));
+    });
+}
+
+function handleMeetIacPersonPicClick(event) {
+    console.log("hello");
+    event.currentTarget.classList.toggle("active");
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    initializeFamily();
+});
+
+function initializeFamily() {
+    document.querySelectorAll(".iac-gallery__content");
+
+    setContentEventListeners(document.querySelectorAll(".iac-gallery__content"));
+}

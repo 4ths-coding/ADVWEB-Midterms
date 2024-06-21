@@ -10,6 +10,10 @@ const programDropdown = document.getElementById("program");
 const programPlaceholder = programDropdown.firstElementChild;
 
 
+function setActiveLogin() {
+    login.classList.toggle("active");
+}
+
 function submitToSession(event) {
     event.preventDefault();
 

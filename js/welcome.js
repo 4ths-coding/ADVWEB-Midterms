@@ -1,11 +1,10 @@
-// If user doesn't not exist then redirect to form
+//If user doesn't not exist then redirect to form
 if (!sessionStorage.getItem("USER")) location.replace("../index.html");
 else {
     const userDetails = JSON.parse(sessionStorage.getItem("USER"));
 
     document.getElementById("firstName").innerHTML = userDetails.firstName;
 }
-
 
 
 function startLandingPage() {
@@ -19,5 +18,5 @@ function startLandingPage() {
 
     setTimeout(() => {
         location.replace("../pages/landingPage.html");
-    }, 1000);    
+    }, 1000);
 }

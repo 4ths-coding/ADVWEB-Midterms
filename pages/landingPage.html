@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=2048">
 
     <!-- Google Font: Josefin and Nunito-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +13,7 @@
         rel="stylesheet">
 
 
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style-orig.css">
     <title>Welcome Kit</title>
 </head>
 
@@ -30,7 +30,7 @@
 
         <div class="search__search-area">
             <div class="search__content">
-                <form action="#" class="search__form">
+                <form action="#" class="search__form" onsubmit="return scrollToItem(event)">
                     <input type="text" class="search__input" placeholder="Search..." id="search">
                     <label for="search" class="search__label">Enter search terms and press return</label>
                 </form>
@@ -100,21 +100,21 @@
 
         <div class="navigation__nav">
             <ul class="navigation__list">
-                <li class="navigation__item" onmouseenter="updateSublist('home')" onclick="scrollToSection('home')"><a href="#home"
+                <li class="navigation__item" onmouseenter="updateSublist('home')"><a href="#"
                         class="navigation__link">Home</a></li>
-                <li class="navigation__item" onmouseenter="updateSublist('about')" onclick="scrollToSection('about')"><a href="#about"
+                <li class="navigation__item" onmouseenter="updateSublist('about')"><a href="#"
                         class="navigation__link">About</a></li>
-                <li class="navigation__item" onmouseenter="updateSublist('campus')" onclick="scrollToSection('campus')"><a href="#campus"
+                <li class="navigation__item" onmouseenter="updateSublist('campus')"><a href="#"
                         class="navigation__link">Campus</a></li>
-                <li class="navigation__item" onmouseenter="updateSublist('family')" onclick="scrollToSection('family')"><a href="#meet-iac"
+                <li class="navigation__item" onmouseenter="updateSublist('family')"><a href="#"
                         class="navigation__link">Meet the Family</a></li>
-                <li class="navigation__item" onmouseenter="updateSublist('facilities')" onclick="scrollToSection('facilities')"><a href="#facilities"
+                <li class="navigation__item" onmouseenter="updateSublist('facilities')"><a href="#"
                         class="navigation__link">Facilities</a></li>
                 <li class="navigation__item" onmouseenter="updateSublist('organizations')"><a href="#"
                         class="navigation__link">Organizations</a></li>
-                <li class="navigation__item" onmouseenter="updateSublist('events')" onclick="scrollToSection('events')"><a href="#events"
+                <li class="navigation__item" onmouseenter="updateSublist('events')"><a href="#"
                         class="navigation__link">Events</a></li>
-                <li class="navigation__item" onmouseenter="updateSublist('others')" onclick="scrollToSection('others')"><a href="#others"
+                <li class="navigation__item" onmouseenter="updateSublist('others')"><a href="#"
                         class="navigation__link">Others</a></li>
             </ul>
 
@@ -124,7 +124,7 @@
 
             <div class="quick-link">
                 <h4 class="heading-5 heading-5--blue">Quicklinks</h4>
-                <ul class="list">
+                <ul class="list list--quicklink">
                     <li class="quick-link__item list__item">
                         <svg class="quick-link__icon">
                             <use xlink:href="../img/sprite.svg#icon-email"></use>
@@ -195,7 +195,7 @@
     </div>
 
 
-    <header class="header" id="home">
+    <header class="header">
         <div class="top-heading">
             <img src="../img/iac-logo-blue.png" alt="iACADEMY Logo" class="top-heading__logo">
             <button class="btn-inquire">
@@ -260,7 +260,7 @@
 
         <!-- swithcing info slash for campus (sliding info) -->
 
-        <div class="campus" id="campus">
+        <div class="campus">
             <figure class="campus__text-area" id="campusTextArea">
                 <h2 class="heading-1 campus__heading mb-md" id="campusLocation">Campus</h2>
                 <div class="campus__paragraphs" id="campusParagraphs">
@@ -268,18 +268,16 @@
                 </div>
             </figure>
             <figure class="campus__top">
-                <img src="../img/iacademy-makati.png" alt="iACADEMY Makati" class="campus__img"
-                    onmouseenter="showCampusText('Makati')">
+                <img src="../img/iacademy-makati.png" alt="iACADEMY Makati" class="campus__img" onclick="setActiveCampus('Makati')" id="makati">
                 <figcaption class="campus__caption">Makati</figcaption>
             </figure>
             <figure class="campus__bottom">
-                <img src="../img/iacademy-cebu.JPG" alt="iACADEMY Cebu" class="campus__img"
-                    onmouseover="showCampusText('Cebu')">
+                <img src="../img/iacademy-cebu.JPG" alt="iACADEMY Cebu" class="campus__img" onclick="setActiveCampus('Cebu')" id="cebu">
                 <figcaption class="campus__caption">Cebu</figcaption>
             </figure>
         </div>
 
-        <div class="meet-iac" id="meet-iac">
+        <div class="meet-iac">
             <h2 class="meet-iac__heading heading-1 heading-1--blue">Meet the family</h2>
             <div class="meet-iac__nav iac-nav" id="meetIacNav">
                 <!-- Dots -->
@@ -317,7 +315,7 @@
             </div>
         </div>
 
-        <div class="facilities" id="facilities">
+        <div class="facilities">
             <h2 class="heading-1 heading-1--blue mb-sm">Our Facilities</h2>
 
             <!-- Ground Floor is just a test -->
@@ -344,18 +342,23 @@
         </div>
 
 
-        <div class="events" id="events">
+        <div class="events">
             <!-- Copy best flex animation + half the background-->
             <h2 class="heading-1 heading-1--blue">
                 Events
                 <span>to watch out for</span>
             </h2>
+
+            <!-- – -->
             <div class="events-gallery">
                 <figure class="events-gallery__item">
                     <img src="../img/event.jpg" alt="Event" class="events-gallery__img">
                     <figcaption class="events-gallery__text">
                         <h3 class="events-gallery__name">Student Orientation and Registration (SOAR)</h3>
-                        <h4 class="events-gallery__date">Jan. 9, 2024</h4>
+                        <span class="events-gallery__date-and-indicator">
+                            <h4 class="events-gallery__date">Jan. 9, 2024</h4>
+                            <div class="events-gallery__indicator">+</div>
+                        </span>
                         <p class="events-gallery__description">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos assumenda quis,
                             numquam voluptate possimus ipsa odio laborum eos illo veritatis.
@@ -366,7 +369,10 @@
                     <img src="../img/event.jpg" alt="Event" class="events-gallery__img">
                     <figcaption class="events-gallery__text">
                         <h3 class="events-gallery__name">iACADEMY Foundation Week</h3>
-                        <h4 class="events-gallery__date">Jan. 9, 2024</h4>
+                        <span class="events-gallery__date-and-indicator">
+                            <h4 class="events-gallery__date">Jan. 9, 2024</h4>
+                            <div class="events-gallery__indicator">+</div>
+                        </span>
                         <p class="events-gallery__description">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos assumenda quis,
                             numquam voluptate possimus ipsa odio laborum eos illo veritatis.
@@ -377,7 +383,10 @@
                     <img src="../img/event.jpg" alt="Event" class="events-gallery__img">
                     <figcaption class="events-gallery__text">
                         <h3 class="events-gallery__name">Therapets</h3>
-                        <h4 class="events-gallery__date">Jan. 9, 2024</h4>
+                        <span class="events-gallery__date-and-indicator">
+                            <h4 class="events-gallery__date">Jan. 9, 2024</h4>
+                            <div class="events-gallery__indicator">+</div>
+                        </span>
                         <p class="events-gallery__description">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos assumenda quis,
                             numquam voluptate possimus ipsa odio laborum eos illo veritatis.
@@ -388,7 +397,10 @@
                     <img src="../img/event.jpg" alt="Event" class="events-gallery__img">
                     <figcaption class="events-gallery__text">
                         <h3 class="events-gallery__name">PBL Expo</h3>
-                        <h4 class="events-gallery__date">Jan. 9, 2024</h4>
+                        <span class="events-gallery__date-and-indicator">
+                            <h4 class="events-gallery__date">Jan. 9, 2024</h4>
+                            <div class="events-gallery__indicator">+</div>
+                        </span>
                         <p class="events-gallery__description">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos assumenda quis,
                             numquam voluptate possimus ipsa odio laborum eos illo veritatis.
@@ -399,7 +411,10 @@
                     <img src="../img/event.jpg" alt="Event" class="events-gallery__img">
                     <figcaption class="events-gallery__text">
                         <h3 class="events-gallery__name">Battle League</h3>
-                        <h4 class="events-gallery__date">Jan. 9, 2024</h4>
+                        <span class="events-gallery__date-and-indicator">
+                            <h4 class="events-gallery__date">Jan. 9, 2024</h4>
+                            <div class="events-gallery__indicator">+</div>
+                        </span>
                         <p class="events-gallery__description">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos assumenda quis,
                             numquam voluptate possimus ipsa odio laborum eos illo veritatis.
@@ -410,7 +425,10 @@
                     <img src="../img/event.jpg" alt="Event" class="events-gallery__img">
                     <figcaption class="events-gallery__text">
                         <h3 class="events-gallery__name">Creative Camp</h3>
-                        <h4 class="events-gallery__date">Jan. 9, 2024</h4>
+                        <span class="events-gallery__date-and-indicator">
+                            <h4 class="events-gallery__date">Jan. 9, 2024</h4>
+                            <div class="events-gallery__indicator">+</div>
+                        </span>
                         <p class="events-gallery__description">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos assumenda quis,
                             numquam voluptate possimus ipsa odio laborum eos illo veritatis.
@@ -421,7 +439,10 @@
                     <img src="../img/event.jpg" alt="Event" class="events-gallery__img">
                     <figcaption class="events-gallery__text">
                         <h3 class="events-gallery__name">Recognition Day</h3>
-                        <h4 class="events-gallery__date">Jan. 9, 2024</h4>
+                        <span class="events-gallery__date-and-indicator">
+                            <h4 class="events-gallery__date">Jan. 9, 2024</h4>
+                            <div class="events-gallery__indicator">+</div>
+                        </span>
                         <p class="events-gallery__description">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos assumenda quis,
                             numquam voluptate possimus ipsa odio laborum eos illo veritatis.
@@ -432,7 +453,10 @@
                     <img src="../img/event.jpg" alt="Event" class="events-gallery__img">
                     <figcaption class="events-gallery__text">
                         <h3 class="events-gallery__name">Graduation Day</h3>
-                        <h4 class="events-gallery__date">Jan. 9, 2024</h4>
+                        <span class="events-gallery__date-and-indicator">
+                            <h4 class="events-gallery__date">Jan. 9, 2024</h4>
+                            <div class="events-gallery__indicator">+</div>
+                        </span>
                         <p class="events-gallery__description">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos assumenda quis,
                             numquam voluptate possimus ipsa odio laborum eos illo veritatis.
@@ -443,7 +467,10 @@
                     <img src="../img/event.jpg" alt="Event" class="events-gallery__img">
                     <figcaption class="events-gallery__text">
                         <h3 class="events-gallery__name">Special Events</h3>
-                        <h4 class="events-gallery__date">Jan. 9, 2024</h4>
+                        <span class="events-gallery__date-and-indicator">
+                            <h4 class="events-gallery__date">Jan. 9, 2024</h4>
+                            <div class="events-gallery__indicator">+</div>
+                        </span>
                         <p class="events-gallery__description">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos assumenda quis,
                             numquam voluptate possimus ipsa odio laborum eos illo veritatis.
@@ -453,11 +480,11 @@
             </div>
         </div>
 
-        <div class="checklist" id="others">
+        <div class="checklist">
             <h2 class="heading-1 heading-1--white checklist__heading">Checklist</h2>
             <div class="checklist-circle" id="checklistCircle" onclick="nextList(1)">
                 <div class="checklist-circle__item checklist-circle__item--1">
-                    <h3 class="checklist-circle__item-heading">
+                    <h3 class="checklist-circle__item-heading first">
                         Step 1: Admission Department
                     </h3>
                     <ul class="checklist-list">
@@ -468,7 +495,7 @@
                     </ul>
                 </div>
                 <div class="checklist-circle__item checklist-circle__item--2">
-                    <h3 class="checklist-circle__item-heading">
+                    <h3 class="checklist-circle__item-heading second">
                         Step 2: IT Department
                     </h3>
                     <ul class="checklist-list">
@@ -477,14 +504,14 @@
                     </ul>
                 </div>
                 <div class="checklist-circle__item checklist-circle__item--4">
-                    <h3 class="checklist-circle__item-heading">
+                    <h3 class="checklist-circle__item-heading third">
                         Step 3: Clinic</h3>
                     <ul class="checklist-list">
                         <li class="checklist-list__item">Medical and Dental Check up</li>
                     </ul>
                 </div>
                 <div class="checklist-circle__item checklist-circle__item--5">
-                    <h3 class="checklist-circle__item-heading">
+                    <h3 class="checklist-circle__item-heading fourth">
                         Step 4: Online Student Orientation
                     </h3>
                 </div>
@@ -492,7 +519,7 @@
                     <h3 class="checklist-circle__item-heading last">SOAR 2024!</h3>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" id="card" onclick="flipCard()">
                 <div class="card__side card__side--front">
                     <div class="card__picture card__picture--2">
                         &nbsp;
@@ -526,13 +553,15 @@
     </main>
 
     <script src="../js/navigation.js" type="text/javascript"></script>
-
+    <script src="../js/searchv1.js" type="text/javascript"></script>
     <script src="../js/galleryGrid.js" type="text/javascript"></script>
     <script src="../js/about.js" type="text/javascript"></script>
     <script src="../js/campus.js" type="text/javascript"></script>
     <script src="../js/meetIac.js" type="text/javascript"></script>
     <script src="../js/facilities.js" type="text/javascript"></script>
     <script src="../js/checklistCircle.js" type="text/javascript"></script>
+    <script src="../js/events.js" type="text/javascript"></script>
+    <script src="../js/card.js" type="text/javascript"></script>
     <script type="text/javascript">
         // Scroll to top when the page is unloaded (useful for reloads)
         window.addEventListener('beforeunload', () => {

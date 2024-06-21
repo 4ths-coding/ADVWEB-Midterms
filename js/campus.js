@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function showCampusText(currentCampus) {
-    
+
 
     if (currentCampus === "Makati") {
         campusLocation.innerHTML = campus.makati.heading;
@@ -75,3 +75,16 @@ function showCampusText(currentCampus) {
     campusTextArea.classList.add("shown");
 }
 
+
+const makatiCampusImg = document.getElementById("makati");
+const cebuCampusImg = document.getElementById("cebu");
+
+function setActiveCampus(currentCampus) {
+    makatiCampusImg.classList.remove("active");
+    cebuCampusImg.classList.remove("active");
+    showCampusText(currentCampus);
+
+    currentCampus === "Makati" ?
+        makatiCampusImg.classList.add("active") :
+        cebuCampusImg.classList.add("active");
+}

@@ -1,0 +1,110 @@
+
+:root {
+  --color-primary: #112D4E;
+  --color-primary-dark: #102743;
+  --color-primary-light-1: #19467a;
+  --color-primary-light-2: #225c9e;
+  --color-secondary: #F9F7F7;
+  --color-secondary-dark: #b8b8b8;
+  --color-secondary-dark-2: #d4d4d4;
+  --color-secondary-dark-3: #ededed;
+  --color-secondary-dark-4: #c4c4c4;
+  --color-tertiary: #DBE2EF;
+  --color-yellow: #ffe600;
+  --color-yellow-dark: #b09418;
+  --color-yellow-dark-1: #c1a31c;
+  --color-yellow-dark-2: #dab821;
+  --color-yellow-dark-3: #ecc722;
+  --color-grey: #5a5a5a;
+  --color-grey-dark: #4e4e4e;
+  --color-grey-dark-1: #333333;
+  --color-grey-light-1: #a1a1a1;
+  --color-grey-light-2: #b1b1b1;
+  --color-red: red;
+  --color-green: rgb(0, 183, 0);
+  --color-blue-light-1: #b3d8ff;
+  --color-shs: #a0eeff;
+  --color-shs-dark: #44656c;
+  --color-shs-dark-1: rgb(58, 86, 93);
+  --color-soc: #d8d017;
+  --color-soc-light-1: #fef61d;
+  --color-soc-dark: #66630c;
+  --color-sbla: #ca1d1d;
+  --color-sbla-dark: #570d0d;
+  --color-soda: #00a6cb;
+  --color-soda-dark: #004555;
+  --font-primary: 'Nunito', sans-serif;
+  --font-display: 'Josefin Sans', sans-serif;
+  --default-font-size: 1.6rem;
+  --nav-btn-height: 7rem;
+  --nav-btn-width: 7rem;
+}
+
+/* Base Styles */
+.heading-1, .heading-3, .heading-5, .welcome-message {
+  font-family: var(--font-display);
+  font-weight: 400;
+}
+
+/* Responsive Typography */
+body {
+  font-size: var(--default-font-size);
+}
+
+@media (max-width: 1200px) {
+  body {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 992px) {
+  body {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    font-size: 0.9rem;
+  }
+}
+
+/* Responsive Navigation Buttons */
+.nav-btn {
+  height: var(--nav-btn-height);
+  width: var(--nav-btn-width);
+}
+
+@media (max-width: 768px) {
+  .nav-btn {
+    height: 5rem;
+    width: 5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .nav-btn {
+    height: 4rem;
+    width: 4rem;
+  }
+}
+
+/* Example Animation */
+@keyframes animateTopLeft {
+  0% {
+    transform: translate(-100%, -100%);
+  }
+  100% {
+    transform: translate(0);
+    background-color: var(--color-secondary);
+  }
+}
+
+/* Other animations omitted for brevity */
+/* Add media queries and responsive rules for other elements as needed */
